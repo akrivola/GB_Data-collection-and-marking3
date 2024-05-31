@@ -13,7 +13,7 @@ import csv
 class CsvWriterPipeline:
     def __init__(self):
         self.file = open('items.csv', 'w', newline='', encoding='utf-8')
-        self.writer = csv.DictWriter(self.file, fieldnames=['name', 'categories', 'url', 'photo'])
+        self.writer = csv.DictWriter(self.file, fieldnames=['url', 'name', 'categories', 'photo'])
         self.writer.writeheader()
 
     def process_item(self, item, spider):
