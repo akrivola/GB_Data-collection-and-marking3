@@ -66,6 +66,7 @@ DOWNLOAD_DELAY = 0.5
 ITEM_PIPELINES = {
     "Unsplash.pipelines.UnsplashPipeline": 300,
     "Unsplash.pipelines.PhotosPipeline": 200,
+    'Unsplash.pipelines.CsvWriterPipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

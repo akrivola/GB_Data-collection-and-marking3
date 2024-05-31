@@ -8,6 +8,22 @@ from itemadapter import ItemAdapter
 
 from scrapy.pipelines.images import ImagesPipeline
 
+import csv
+
+class CsvWriterPipeline:
+    def __init__(self):
+        self.file = open('items.csv', 'w', newline='', encoding='utf-8')
+        self.writer = csv.DictWriter(self.file, fieldnames=['name', 'categories', 'url', 'photo'])
+        self.writer.writeheader()
+
+    def process_item(self, item, spider):
+        self.writer.writerow(item)
+        return item
+
+    def close_spider(self, spider):
+        self.file.close()
+
+
 class UnsplashPipeline:
     def process_item(self, item, spider):
         print()
