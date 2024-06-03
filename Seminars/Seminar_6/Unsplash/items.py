@@ -13,3 +13,4 @@ class UnsplashItem(scrapy.Item):
     categories = scrapy.Field()
     url = scrapy.Field()
     photo = scrapy.Field()
+    #file_path = scrapy.Field()
